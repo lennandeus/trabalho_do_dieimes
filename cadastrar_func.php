@@ -3,14 +3,14 @@
     if(isset($_POST['bt_nome_completo'])){
         /*-------------------------------------*/ 
 
-            $nomecomp = $_POST['bt_nome_completo'];
+            $nome_completo = $_POST['bt_nome_completo'];
             $data_nasc = $_POST['bt_data_nasc'];
             $habilidades = $_POST['bt_habilidades'];
             $ocupacao = $_POST['bt_ocupacao'];
 
         /*-------------------------------------*/
 
-        $mysqli -> query("INSERT INTO tabela_func (nomecomp, data_nasc, habilidades, ocupacao) values ('$nomecomp', '$data_nasc', '$habilidades','$ocupacao')") or 
+        $mysqli -> query("INSERT INTO tabela_func (nome_completo, data_nasc, habilidades, ocupacao) values ('$nome_completo', '$data_nasc', '$habilidades','$ocupacao')") or 
     die ($mysqli->error);    
     }
 
