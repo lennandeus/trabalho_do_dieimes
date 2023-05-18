@@ -32,7 +32,7 @@
         <form action="" method="post">
             <div class="mb-3">
                 <label class="form-label" for="">Nome Completo:</label>
-                <input class="form-control" type="text" name="bt_nomecomp">
+                <input class="form-control" type="text" name="bt_nome_completo">
             </div>
             <div class="mb-3">
                 <label class="form-label" for="">Data de Nascimento:</label>
