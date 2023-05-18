@@ -1,16 +1,16 @@
 <?php
     include("conexao.php");  // Arquivo php referente ao banco de dados   
-    if(isset($_POST['bt_preco'])){
+    if(isset($_POST['bt_nome_completo'])){
         /*-------------------------------------*/ 
 
-            $preco = $_POST['bt_preco'];
-            $img = $_POST['bt_img'];
-            $ingredientes = $_POST['bt_ingredientes'];
-            $nome = $_POST['bt_nome'];
+            $nomecomp = $_POST['bt_nome_completo'];
+            $data_nasc = $_POST['bt_data_nasc'];
+            $habilidades = $_POST['bt_habilidades'];
+            $ocupacao = $_POST['bt_ocupacao'];
 
         /*-------------------------------------*/
 
-        $mysqli -> query("INSERT INTO tabela_lanche (preco, img, ingredientes, nome) values ('$preco', '$img', '$ingredientes','$nome')") or 
+        $mysqli -> query("INSERT INTO tabela_func (nomecomp, data_nasc, habilidades, ocupacao) values ('$nomecomp', '$data_nasc', '$habilidades','$ocupacao')") or 
     die ($mysqli->error);    
     }
 
@@ -28,24 +28,24 @@
     </head>
     <body>
     <div class="container">
-        <h1>Cadastro de Lanches - Buteco do Nunes</h1>
+        <h1>Cadastro de Funcionários - Buteco do Nunes</h1>
         <form action="" method="post">
             <div class="mb-3">
-                <label class="form-label" for="">Preço:</label>
-                <input class="form-control" type="text" name="bt_preco">
+                <label class="form-label" for="">Nome Completo:</label>
+                <input class="form-control" type="text" name="bt_nomecomp">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="">Imagem do lanche:</label>
-                <input class="form-control" type="file" name="bt_img">
+                <label class="form-label" for="">Data de Nascimento:</label>
+                <input class="form-control" type="text" name="bt_data_nasc">
             </div>
 
             <div class="mb-3">
-                <label class="form-label" for="">Ingredientes:</label>
-                <input class="form-control" type="text" name="bt_ingredientes">
+                <label class="form-label" for="">Habilidades:</label>
+                <input class="form-control" type="text" name="bt_habilidades">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="">Nome do pedido:</label>
-                <input class="form-control" type="text" name="bt_nome">
+                <label class="form-label" for="">Ocupação:</label>
+                <input class="form-control" type="text" name="bt_ocupacao">
             </div>
             <div class="mb-3">
                 <input class="btn btn-success" type="submit" value="Enviar">
