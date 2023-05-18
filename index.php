@@ -1,3 +1,12 @@
+<?php
+    include ("conexao.php");
+
+    $consultar_banco = "SELECT * FROM tabela_lanche";
+
+    $retorno_consulta = $mysqli->query( $consultar_banco) or die($mysqli->error);
+    $quantidade_lanches = $retorno_consulta->num_rows; // Retornar quantidade de linhas
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -9,7 +18,22 @@
         <title>Document</title>
     </head>
     <body>
+        <?php
+        while($tabela_lanche = $retorno_consulta -> fetch_assoc()){
         
+        ?>
+    <div class="card" style="width: 18rem;">
+  <img src="<?php echo $tabela_lanche ['bt_img']?>" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title"><?php echo $tabela_lanche ['bt_nome']?></h5>
+            <p class="card-text"><?php echo $tabela_lanche ['bt_ingredientes']?></p>
+            <p class="card-text"><?php echo $tabela_lanche ['bt_preco']?></p>
+            <a href="pedido.php" class="btn btn-primary">Comprar</a>
+        </div>
+    </div>
+    <?php
+        }
+    ?>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </html>
